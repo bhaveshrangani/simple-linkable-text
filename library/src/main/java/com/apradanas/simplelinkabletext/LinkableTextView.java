@@ -42,6 +42,10 @@ public class LinkableTextView extends TextView {
     }
 
     public LinkableTextView setText(String text) {
+//         mLinkModifier.setText(text);
+
+//         return this;
+        super.setText(text);
         mLinkModifier.setText(text);
 
         return this;
@@ -68,10 +72,20 @@ public class LinkableTextView extends TextView {
     }
 
     public LinkableTextView build() {
+//         mLinkModifier.build();
+
+//         setText(mLinkModifier.getSpannable());
+
+//         return this;
         mLinkModifier.build();
 
         setText(mLinkModifier.getSpannable());
 
+        if (mLinkModifier.getSpannable()!=null){
+            setText(mLinkModifier.getSpannable());
+        }else{
+            setText(mLinkModifier.getText());
+        }
         return this;
     }
 }
